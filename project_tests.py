@@ -56,27 +56,30 @@ def sol_5_test(sol_5_dict):
             if set(sol_5_dict[k]) != set(sol_5_dict_1[k]):
                 print("Oops!  Looks like there is a mistake with the {} key in your dictionary.  The answer should be {}.  Try again.".format(k,v))
     
+
     
 def sol_4_test(sol_4_dict):
-    
+
     a = 662 # len(test_idx) - user_item_test.shape[0]
     b = 574 # user_test_shape[1] or len(test_arts) because we can make predictions for all articles
     c = 20 # user_item_test.shape[0]
     d = 0 # len(test_arts) - user_item_test.shape[1]
 
     sol_4_dict_1 = {
-    'How many users can we make predictions for in the test set?': c, 
-    'How many users in the test set are we not able to make predictions for because of the cold start problem?': a, 
-    'How many movies can we make predictions for in the test set?': b,
-    'How many movies in the test set are we not able to make predictions for because of the cold start problem?': d
+    'How many users can we make predictions for in the test set?': c,
+    'How many users in the test set are we not able to make predictions for because of the cold start problem?': a,
+    'How many articles can we make predictions for in the test set?': b,
+    'How many articles in the test set are we not able to make predictions for because of the cold start problem?': d
     }
-    
+
     if sol_4_dict == sol_4_dict_1:
-        print("Awesome job!  That's right!  All of the test movies are in the training data, but there are only 20 test users that were also in the training set.  All of the other users that are in the test set we have no data on.  Therefore, we cannot make predictions for these users using SVD.")
+        print("Awesome job!  That's right!  All of the test articles are in the training data, but there are only 20 test users that were also in the training set.  All of the other users that are in the test set we have no data on.  Therefore, we cannot make predictions for these users using SVD.")
     else:
         for k, v in sol_4_dict_1.items():
             if sol_4_dict_1[k] != sol_4_dict[k]:
                 print("Sorry it looks like that isn't the right value associated with {}.  Try again.".format(k))
+                
+
      
     
  
